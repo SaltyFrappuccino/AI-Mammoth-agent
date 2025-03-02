@@ -4,6 +4,8 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.95.0%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![GigaChat](https://img.shields.io/badge/LLM-GigaChat-orange.svg)](https://developers.sber.ru/portal/products/gigachat)
 [![Sber](https://img.shields.io/badge/Sber-Internal-green.svg)](https://www.sber.ru)
+[![Node.js](https://img.shields.io/badge/Node.js-18.x%2B-brightgreen.svg)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18.x-61DAFB.svg)](https://reactjs.org/)
 [![LangChain](https://img.shields.io/badge/LangChain-0.1.0%2B-34D058.svg)](https://langchain.com/)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-2.7%2B-6DB33F.svg)](https://spring.io/projects/spring-boot)
 [![Docker](https://img.shields.io/badge/Docker-Supported-2496ED.svg)](https://www.docker.com/)
@@ -24,6 +26,8 @@
  репозиториев:
 1. **Основной репозиторий** (текущий) — содержит ядро системы анализа и AI-агентов
 2. **[AI-Mammoth-spring](https://github.com/SaltyFrappuccino/AI-Mammoth-spring)** — содержит Spring-приложение, которое автоматизирует работу с ассистентом и позволяет в автоматическом режиме собирать информацию из Confluence, Bitbucket, Jira и Zephyr (тест-кейсы)
+
+**Публичный доступ:** Веб-интерфейс системы доступен по адресу [ai-mammoth-agent.vercel.app/](https://ai-mammoth-agent.vercel.app/)
 
 ## Содержание
 
@@ -338,6 +342,7 @@ AI-Mammoth анализирует и обнаруживает:
 ### Требования
 - Python 3.9+
 - Java 17+ (для Spring-части)
+- Node.js 18.x+ (для веб-интерфейса)
 - Docker и Docker Compose
 - Доступ к API LLM-модели (GigaChat)
 
@@ -345,13 +350,12 @@ AI-Mammoth анализирует и обнаруживает:
 
 1. Клонируйте оба репозитория:
 ```bash
-git clone https://github.com/YOUR_USERNAME/AI-Mammoth.git
-git clone https://github.com/SaltyFrappuccino/AI-Mammoth-spring.git
+git clone https://github.com/SaltyFrappuccino/AI-Mammoth-agent.git
 ```
 
 2. Настройте переменные окружения:
 ```bash
-cd AI-Mammoth
+cd AI-Mammoth-agent
 cp .env.example .env
 # Отредактируйте .env файл, добавив ключи API и конфигурацию
 ```
@@ -360,17 +364,18 @@ cp .env.example .env
 ```bash
 pip install -r requirements.txt
 ```
-
-4. Настройте Spring-приложение:
-```bash
-cd ../AI-Mammoth-spring
-cp application.yml.example application.yml
-# Настройте доступы к Jira, Confluence, Bitbucket и Zephyr
 ```
 
-5. Запустите с использованием Docker:
+### Запуск API через Docker
+
+1. Сборка Docker-образа:
 ```bash
-docker-compose up -d
+docker build -t ai-mammoth-api .
+```
+
+2. Запуск контейнера:
+```bash
+docker run -d -p 8080:8080 --name ai-mammoth-api-container ai-mammoth-api
 ```
 
 ### Конфигурация
@@ -381,32 +386,32 @@ docker-compose up -d
 - Настройки логирования и мониторинга
 - Параметры анализа безопасности
 
-В файле `application.yml` (Spring) настраиваются:
-- Интеграции с внешними системами
-- Периодичность сканирования и обновления данных
-- Правила обработки артефактов
-- Настройки авторизации и аутентификации
+## Запуск веб-интерфейса
 
-## Запуск GUI-приложения
+AI-Mammoth предоставляет графический веб-интерфейс для удобной работы с системой анализа кода.
 
-AI-Mammoth предоставляет графический интерфейс для удобной работы с системой анализа кода.
+### Вариант 1: Запуск через Node.js
 
-### Вариант 1: Запуск Python-скрипта
-
-1. Убедитесь, что у вас установлены необходимые зависимости:
+1. Перейдите в директорию веб-интерфейса:
    ```bash
-   pip install -r requirements.txt
+   cd web
    ```
 
-2. Запустите GUI-приложение:
+2. Установите зависимости:
    ```bash
-   python gui.py
+   npm install
    ```
+
+3. Запустите веб-приложение в режиме разработки:
+   ```bash
+   npm start
+   ```
+   Приложение будет доступно по адресу http://localhost:3000
 
 ### Вариант 2: Запуск исполняемого файла (.exe) - только для Windows
 
 #### Использование готового .exe файла
-1. Скачайте последнюю версию AI-Mammoth-GUI.exe из раздела [Releases](https://github.com/YOUR_USERNAME/AI-Mammoth/releases)
+1. Скачайте последнюю версию AI-Mammoth-GUI.exe из раздела [Releases](https://github.com/SaltyFrappuccino/AI-Mammoth-agent/releases)
 2. Запустите AI-Mammoth-GUI.exe двойным кликом
 
 #### Самостоятельная сборка .exe файла
@@ -423,6 +428,9 @@ AI-Mammoth предоставляет графический интерфейс 
    ```
 
 3. После завершения сборки исполняемый файл будет доступен в директории `dist/AI-Mammoth-GUI.exe`
+
+### Вариант 3: Использование публичного доступа
+Веб-интерфейс системы доступен по адресу [https://ai-mammoth-agent.vercel.app/](https://ai-mammoth-agent.vercel.app/)
 
 #### Примечания по использованию .exe файла
 - Исполняемый файл является полностью автономным и не требует установленного Python
