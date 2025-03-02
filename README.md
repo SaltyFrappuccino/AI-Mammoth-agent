@@ -3,6 +3,7 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.95.0%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![GigaChat](https://img.shields.io/badge/LLM-GigaChat-orange.svg)](https://developers.sber.ru/portal/products/gigachat)
+[![Sber](https://img.shields.io/badge/Sber-Internal-green.svg)](https://www.sber.ru)
 [![LangChain](https://img.shields.io/badge/LangChain-0.1.0%2B-34D058.svg)](https://langchain.com/)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-2.7%2B-6DB33F.svg)](https://spring.io/projects/spring-boot)
 [![Docker](https://img.shields.io/badge/Docker-Supported-2496ED.svg)](https://www.docker.com/)
