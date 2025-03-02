@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, Response, File, UploadFile
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, List, Optional, Any
 import random
@@ -29,6 +30,15 @@ app = FastAPI(
     title="Анализатор Соответствия Требованиям", 
     description="API для анализа требований и кода на их соответствие",
     version="2.0.0"
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # React app origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Создаем директории для статических файлов и результатов

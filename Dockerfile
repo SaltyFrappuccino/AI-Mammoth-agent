@@ -1,21 +1,17 @@
-FROM python:3.9-slim
+FROM python:3.9-bullseye
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    git \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install urllib3 --upgrade
+
+RUN pip install --no-cache-dir --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -r requirements.txt
 
 COPY . .
 
 RUN mkdir -p output/visualizations output/reports
 
-ENV PYTHONPATH=/app
-ENV PYTHONUNBUFFERED=1
+EXPOSE 8080
 
-CMD ["python", "-m", "main"]
+CMD ["python", "-m", "main"] 
