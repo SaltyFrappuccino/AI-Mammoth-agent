@@ -22,8 +22,6 @@
 [![Confluence Integration](https://img.shields.io/badge/Integration-Confluence-0052CC.svg)](https://www.atlassian.com/software/confluence)
 [![Zephyr Integration](https://img.shields.io/badge/Integration-Zephyr-00B5D1.svg)](https://smartbear.com/test-management/zephyr/)
 
-![Mammoth AI](https://i.imgur.com/placeholder_for_logo.png)
-
 ## Описание проекта
 
 **AI-Mammoth** — революционная система автоматического анализа и верификации кода, созданная для существенного снижения количества ошибок при разработке программного обеспечения и ускорения процесса разработки. Система использует передовые технологии искусственного интеллекта для непрерывного анализа артефактов разработки: требований, кода, тест-кейсов и документации.
