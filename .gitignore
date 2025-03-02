@@ -8,3 +8,10 @@ agents/__pycache__
 stfu.txt
 .env
 *.exe
+dist
+*.bat
+*.cmd
+*.spec
+*.toc
+*.zip
+*.rar
