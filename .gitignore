@@ -15,3 +15,5 @@ dist
 *.toc
 *.zip
 *.rar
+build
+*.log
