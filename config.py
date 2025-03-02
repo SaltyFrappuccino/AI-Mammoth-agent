@@ -15,9 +15,13 @@ if "AUTH_URL" not in os.environ:
 if "GIGA_URL" not in os.environ:
     os.environ["GIGA_URL"] = "https://gigachat.devices.sberbank.ru/api/v1"
 
+if "MODEL_TYPE" not in os.environ:
+    os.environ["MODEL_TYPE"] = "GigaChat-Max"  # Default model
+
 AUTH_KEY = os.environ["AUTH_KEY"]
 AUTH_URL = os.environ["AUTH_URL"]
 GIGA_URL = os.environ['GIGA_URL']
+MODEL_TYPE = os.environ["MODEL_TYPE"]  # GigaChat, GigaChat-Pro, or GigaChat-Max
 PORT = int(os.environ.get("PORT", 8080))
 
 from langchain_gigachat.chat_models import GigaChat
@@ -25,7 +29,7 @@ from langchain_gigachat.chat_models import GigaChat
 llm = GigaChat(
     credentials=AUTH_KEY,
     scope="GIGACHAT_API_PERS",
-    model="GigaChat-Max",
+    model=MODEL_TYPE,
     verify_ssl_certs=False,
     auth_url=AUTH_URL,
     base_url=GIGA_URL,
