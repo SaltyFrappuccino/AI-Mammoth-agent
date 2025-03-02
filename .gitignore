@@ -7,3 +7,4 @@ __pycache__
 agents/__pycache__
 stfu.txt
 .env
+*.exe
