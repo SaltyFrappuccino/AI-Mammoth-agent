@@ -27,7 +27,7 @@
 1. **Основной репозиторий** (текущий) — содержит ядро системы анализа и AI-агентов
 2. **[AI-Mammoth-spring](https://github.com/SaltyFrappuccino/AI-Mammoth-spring)** — содержит Spring-приложение, которое автоматизирует работу с ассистентом и позволяет в автоматическом режиме собирать информацию из Confluence, Bitbucket, Jira и Zephyr (тест-кейсы)
 
-**Публичный доступ:** Веб-интерфейс системы доступен по адресу [ai-mammoth-agent.vercel.app/](https://ai-mammoth-agent.vercel.app/)
+**Публичный доступ:** Веб-интерфейс системы доступен по адресу [ai-mammoth-agent.vercel.app/](https://ai-mammoth-site.vercel.app/)
 
 ## Содержание
 
@@ -430,7 +430,7 @@ AI-Mammoth предоставляет графический веб-интерф
 3. После завершения сборки исполняемый файл будет доступен в директории `dist/AI-Mammoth-GUI.exe`
 
 ### Вариант 3: Использование публичного доступа
-Веб-интерфейс системы доступен по адресу [https://ai-mammoth-agent.vercel.app/](https://ai-mammoth-agent.vercel.app/)
+Веб-интерфейс системы доступен по адресу [https://ai-mammoth-agent.vercel.app/](https://ai-mammoth-site.vercel.app/)
 
 #### Примечания по использованию .exe файла
 - Исполняемый файл является полностью автономным и не требует установленного Python
