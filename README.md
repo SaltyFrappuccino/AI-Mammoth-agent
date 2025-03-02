@@ -7,7 +7,6 @@
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-2.7%2B-6DB33F.svg)](https://spring.io/projects/spring-boot)
 [![Docker](https://img.shields.io/badge/Docker-Supported-2496ED.svg)](https://www.docker.com/)
 [![ChromaDB](https://img.shields.io/badge/Vector_DB-ChromaDB-blueviolet.svg)](https://www.trychroma.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Code Size](https://img.shields.io/badge/Code%20Size-50K%2B%20lines-informational)
 [![Documentation](https://img.shields.io/badge/Documentation-Comprehensive-blue.svg)](https://github.com/)
 [![Activity](https://img.shields.io/badge/Activity-High-brightgreen.svg)](https://github.com/)
