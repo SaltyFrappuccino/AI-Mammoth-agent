@@ -1,0 +1,9 @@
+.venv
+.idea
+.code
+.vscode
+chroma
+__pycache__
+agents/__pycache__
+stfu.txt
+.env
