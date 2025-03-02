@@ -23,16 +23,17 @@ PORT = int(os.environ.get("PORT", 8080))
 from langchain_gigachat.chat_models import GigaChat
 
 llm = GigaChat(
-    credentials="Y2JkYzY3ZTUtMjg2Ny00ODJkLWE1ZTYtYmE4MTliMWZkNjVhOjlhZTRiM2UyLWZhZGUtNDNhMy04MjQ0LWFjNDBhMTQxYzRmYw==",
+    credentials=AUTH_KEY,
     scope="GIGACHAT_API_PERS",
     model="GigaChat-Max",
     verify_ssl_certs=False,
-    auth_url="https://sm-auth-sd.prom-88-89-apps.ocp-geo.ocp.sigma.sbrf.ru/api/v2/oauth",
+    auth_url=AUTH_URL,
     base_url=GIGA_URL,
+    timeout=300,
 )
 
 embeddings = GigaChatEmbeddings(
-    credentials="Y2JkYzY3ZTUtMjg2Ny00ODJkLWE1ZTYtYmE4MTliMWZkNjVhOjlhZTRiM2UyLWZhZGUtNDNhMy04MjQ0LWFjNDBhMTQxYzRmYw==",
+    credentials=AUTH_KEY,
     verify_ssl_certs=False,
     scope="GIGACHAT_API_PERS"
 )

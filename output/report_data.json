@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "code_to_requirements": 90,
+    "tests_to_requirements": 80,
+    "code_to_tests": 85,
+    "bug_count": 2
+  },
+  "bug_details": [
+    {
+      "описание": "Отсутствие полноценной документации API в формате OpenAPI/Swagger",
+      "причина": "Эндпоинт `/swagger.json` возвращает упрощенную версию документа Swagger без полного описания всех методов и параметров.",
+      "серьезность": "Средняя\n   Где в коде: routes.py, строка 122",
+      "где в коде": "routes.py, строка 122",
+      "влияние": "Разработчики и пользователи не смогут получить полную информацию о возможностях API, что затруднит интеграцию и использование сервиса.",
+      "рекомендации": "Расширить существующий документ Swagger, добавив полное описание всех методов, параметров и ответов. Пример кода:\n\n```python\nfrom flask import Flask, jsonify\nfrom flasgger import Swagger\n\napp = Flask(__name__)\nswagger = Swagger(app)\n\n@app.route('/swagger')\ndef swagger_doc():\n    return jsonify(swagger.as_dict())\n```"
+    },
+    {
+      "описание": "Недостаточно строгая проверка дат при создании бронирования",
+      "причина": "Валидатор дат заезда и выезда (`check_in`, `check_out`) не осуществляет полной проверки корректности введенных значений.",
+      "серьезность": "Средняя\n   Где в коде: validators.py, строка 15",
+      "где в коде": "validators.py, строка 15",
+      "влияние": "Пользователь может ввести неверные данные, например, дату заезда позже даты выезда, что приведет к ошибкам в работе системы.",
+      "рекомендации": "Улучшить валидатор дат, добавляя проверку на корректность порядка дат. Пример кода:\n\n```python\ndef validate_dates(check_in, check_out):\n    if not isinstance(check_in, datetime.date) or not isinstance(check_out, datetime.date):\n        raise ValueError(\"Invalid date format\")\n    \n    if check_in >= check_out:\n        raise ValueError(\"Check-in date must be before check-out date\")\n    \n    return True\n```\n\nЭти баги требуют внимания, поскольку они влияют на удобство использования и стабильность работы системы."
+    }
+  ]
+}
