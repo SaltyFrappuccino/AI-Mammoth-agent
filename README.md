@@ -342,7 +342,7 @@ AI-Mammoth анализирует и обнаруживает:
 
 ### Установка
 
-1. Клонируйте оба репозитория:
+1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/SaltyFrappuccino/AI-Mammoth-agent.git
 ```
@@ -358,6 +358,10 @@ cp .env.example .env
 ```bash
 pip install -r requirements.txt
 ```
+
+4. Запустите API:
+```bash
+python main.py
 ```
 
 ### Запуск API через Docker
